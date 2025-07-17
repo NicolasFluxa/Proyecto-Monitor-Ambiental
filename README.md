@@ -1,9 +1,9 @@
 # Estación de Monitoreo Ambiental con ESP32 y Firebase
 
 ## 1. Descripción del Proyecto
-Este es un proyecto de ingeniería de Internet de las Cosas (IoT) que consiste en una estación de monitoreo ambiental integral. El sistema utiliza un microcontrolador ESP32 para recopilar datos de un conjunto completo de sensores y los envía en tiempo real a una base de datos en la nube (Google Firebase) para su almacenamiento y posterior análisis.
+Este es un proyecto de ingeniería de Internet de las Cosas (IoT) que consiste en una estación de monitoreo ambiental. El sistema utiliza un microcontrolador ESP32 para recopilar datos de un conjunto de sensores y los envía en tiempo real a una base de datos en la nube (Google Firebase) para su almacenamiento y posterior análisis.
 
-El objetivo principal es crear un dispositivo funcional y robusto, documentando cada fase del proceso, desde la selección de componentes hasta la solución de problemas, para que el proyecto sea fácilmente replicable en su totalidad.
+El objetivo principal es crear un prototipo funcional y robusto, documentando cada fase del proceso para que el proyecto sea fácilmente replicable.
 
 ---
 
@@ -14,7 +14,6 @@ La estación está diseñada para medir las siguientes variables ambientales:
 * **Dióxido de Carbono (CO₂)**
 * **Presión Atmosférica**
 * **Nivel de Ozono (O₃)**
-* **Nivel de Ruido Ambiental**
 * Transmisión de datos inalámbrica a través de WiFi.
 * Almacenamiento en la nube con Google Firebase Realtime Database.
 
@@ -29,7 +28,6 @@ La estación está diseñada para medir las siguientes variables ambientales:
 | **Sensor CO₂** | MH-Z19E                                         | Medición de Dióxido de Carbono            |
 | **Sensor Presión** | GY-BMP280                                       | Medición de presión atmosférica           |
 | **Sensor Ozono** | MQ-131                                          | Medición de O₃ (lectura cruda)            |
-| **Sensor Sonido** | KY-037                                          | Medición de nivel de ruido                |
 | **Placa de Expansión** | Shield para NodeMCU ESP32                       | Facilita conexiones y gestiona la energía |
 | **Fuente de Poder** | Adaptador de pared 9V o 12V DC, 1A (o superior) | Alimenta todo el sistema de forma estable |
 
@@ -48,7 +46,6 @@ Esta tabla muestra la distribución de pines para el proyecto completo, con todo
 | **BMP280** | SCL            | D22 (GPIO 22) |
 |             | SDA            | D21 (GPIO 21) |
 | **MQ-131** | AOUT           | D35 (GPIO 35) |
-| **KY-037** | AO             | D34 (GPIO 34) |
 
 ---
 
@@ -79,4 +76,5 @@ Es crucial usar estas versiones específicas para asegurar la compatibilidad.
 2.  **Configurar el Entorno:** Instala el IDE de Arduino y el paquete de soporte para placas ESP32 (v2.0.5+).
 3.  **Instalar Librerías:** Usando el Gestor de Librerías, instala cada una de las librerías listadas.
 4.  **Crear Proyecto en Firebase:** Crea un nuevo proyecto y una Realtime Database. Copia la URL y la Clave Secreta.
-5.  **Configurar y Subir el Código:** Descarga el código fuente, actualiza las credenciales de WiFi y Firebase, y súbelo al ESP32.
+5.  **Configurar y Subir el Código:** Descarga el código fuente de este repositorio. El código está preparado para activar todos los sensores, pero tiene comentadas las secciones de los sensores que requieren más energía (MH-Z19E, BMP280). Edita las credenciales de WiFi y Firebase.
+6.  **Subir y Ejecutar:** Conecta tu placa ESP32 y sube el código. Para la versión completa, se requiere una fuente de alimentación externa y descomentar las secciones pertinentes en el código.
