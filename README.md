@@ -1,13 +1,27 @@
 # Estación de Monitoreo Ambiental con ESP32 y Firebase
+[![Estado del Proyecto: Activo](https://img.shields.io/badge/estado-activo-success.svg)](https://github.com/NicolasFluxa/Proyecto-Monitor-Ambiental) 
+[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow.svg)](https://github.com/NicolasFluxa/Proyecto-Monitor-Ambiental/blob/main/LICENSE)
+[![Tecnología: ESP32](https://img.shields.io/badge/plataforma-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
+[![Backend: Firebase](https://img.shields.io/badge/backend-Firebase-orange.svg)](https://firebase.google.com/)
 
-## 1. Descripción del Proyecto
-Este es un proyecto de ingeniería de Internet de las Cosas (IoT) que consiste en una estación de monitoreo ambiental. El sistema utiliza un microcontrolador ESP32 para recopilar datos de un conjunto de sensores y los envía en tiempo real a una base de datos en la nube (Google Firebase) para su almacenamiento y posterior análisis.
+Una estación IoT de código abierto para monitorear la calidad del aire en tiempo real, diseñada para ser replicable y escalable.
 
-El objetivo principal es crear un prototipo funcional y robusto, documentando cada fase del proceso para que el proyecto sea fácilmente replicable.
+**Nota:** ¡Asegúrate de reemplazar esta imagen con una foto de tu proyecto terminado!
+![Foto del Prototipo Terminado](fotos/mi_estacion.jpg)
 
 ---
+## Motivación
+La calidad del aire que respiramos tiene un impacto directo en nuestra salud y bienestar. Este proyecto nace de la necesidad de crear una herramienta accesible y de bajo costo que permita a cualquier persona medir, entender y tomar conciencia de su entorno, utilizando tecnologías modernas para tomar decisiones informadas.
 
-## 2. Características
+---
+## Demo de Funcionamiento
+A continuación, se muestra el sistema en acción, enviando los datos de los sensores a la base de datos en la nube en tiempo real.
+
+**Nota:** ¡Graba un GIF corto de tu Monitor Serie y la consola de Firebase actualizándose y reemplaza esta imagen!
+![GIF de Demo](fotos/demo_firebase.gif)
+
+---
+## Características
 La estación está diseñada para medir las siguientes variables ambientales:
 * **Temperatura y Humedad**
 * **Calidad del Aire (Partículas PM2.5 y PM10)**
@@ -18,24 +32,26 @@ La estación está diseñada para medir las siguientes variables ambientales:
 * Almacenamiento en la nube con Google Firebase Realtime Database.
 
 ---
-
-## 3. Componentes y Hardware
-| Componente             | Modelo Específico                               | Propósito                                 |
-| :--------------------- | :---------------------------------------------- | :---------------------------------------- |
-| **Microcontrolador** | NodeMCU ESP32 WROOM-32                          | Cerebro del proyecto, gestiona y envía datos |
-| **Sensor Temp/Hum** | DHT22                                           | Medición de temperatura y humedad         |
-| **Sensor Partículas** | SDS011                                          | Medición de PM2.5 y PM10                  |
-| **Sensor CO₂** | MH-Z19E                                         | Medición de Dióxido de Carbono            |
-| **Sensor Presión** | GY-BMP280                                       | Medición de presión atmosférica           |
-| **Sensor Ozono** | MQ-131                                          | Medición de O₃ (lectura cruda)            |
-| **Placa de Expansión** | Shield para NodeMCU ESP32                       | Facilita conexiones y gestiona la energía |
-| **Fuente de Poder** | Adaptador de pared 9V o 12V DC, 1A (o superior) | Alimenta todo el sistema de forma estable |
+## Arquitectura del Sistema
+El flujo de datos del sistema sigue una arquitectura IoT clásica, desde la adquisición hasta la nube:
+`[Sensores] -> [ESP32 + Shield] -> [Router WiFi] -> [Firebase Cloud] -> [Usuario Final]`
 
 ---
+## Componentes y Conexiones
+*(Para una descripción técnica detallada de cada componente, consulta el informe completo del proyecto)*
 
-## 4. Diagrama de Conexiones Final
-Esta tabla muestra la distribución de pines para el proyecto completo, con todos los sensores conectados.
+| Componente             | Modelo Específico                               |
+| :--------------------- | :---------------------------------------------- |
+| **Microcontrolador** | NodeMCU ESP32 WROOM-32                          |
+| **Sensor Temp/Hum** | DHT22                                           |
+| **Sensor Partículas** | SDS011                                          |
+| **Sensor CO₂** | MH-Z19E                                         |
+| **Sensor Presión** | GY-BMP280                                       |
+| **Sensor Ozono** | MQ-131                                          |
+| **Placa de Expansión** | Shield para NodeMCU ESP32                       |
+| **Fuente de Poder** | Adaptador de pared 9V o 12V DC, 1A+             |
 
+### Diagrama de Pinout
 | Sensor      | Pin del Sensor | Pin del ESP32 |
 | :---------- | :------------- | :------------ |
 | **DHT22** | DATA           | D4 (GPIO 4)   |
@@ -48,33 +64,12 @@ Esta tabla muestra la distribución de pines para el proyecto completo, con todo
 | **MQ-131** | AOUT           | D35 (GPIO 35) |
 
 ---
-
-## 5. Entorno de Desarrollo y Software
+## Entorno y Replicación
 Para replicar este proyecto, se utilizó el siguiente entorno:
-
 * **Sistema Operativo:** Windows 11
 * **IDE:** Arduino IDE v2.3.6
 * **Paquete de Placas:** `esp32` by Espressif Systems v2.0.5 o superior.
 * **Backend:** Google Firebase - Realtime Database.
+* **Librerías:** Consulta la sección de librerías en el informe técnico para ver las versiones exactas.
 
-### Librerías de Arduino
-Es crucial usar estas versiones específicas para asegurar la compatibilidad.
-
-| Librería                                             | Autor             | Versión Recomendada |
-| :--------------------------------------------------- | :---------------- | :------------------ |
-| **DHT sensor library** | Adafruit          | 1.4.6               |
-| **Firebase Arduino Client Library for ESP8266 & ESP32** | Mobizt            | 4.4.17              |
-| **MH-Z19** | Jonathan Dempsey  | 1.5.4               |
-| **Adafruit BMP280 Library** | Adafruit          | 2.6.8               |
-| **Adafruit BusIO** | Adafruit          | 1.17.2              |
-| **Adafruit Unified Sensor** | Adafruit          | 1.1.15              |
-
----
-
-## 6. Para Replicar el Proyecto
-1.  **Montar el Hardware:** Reúne todos los componentes y conéctalos según el diagrama de pinout.
-2.  **Configurar el Entorno:** Instala el IDE de Arduino y el paquete de soporte para placas ESP32 (v2.0.5+).
-3.  **Instalar Librerías:** Usando el Gestor de Librerías, instala cada una de las librerías listadas.
-4.  **Crear Proyecto en Firebase:** Crea un nuevo proyecto y una Realtime Database. Copia la URL y la Clave Secreta.
-5.  **Configurar y Subir el Código:** Descarga el código fuente de este repositorio. El código está preparado para activar todos los sensores, pero tiene comentadas las secciones de los sensores que requieren más energía (MH-Z19E, BMP280). Edita las credenciales de WiFi y Firebase.
-6.  **Subir y Ejecutar:** Conecta tu placa ESP32 y sube el código. Para la versión completa, se requiere una fuente de alimentación externa y descomentar las secciones pertinentes en el código.
+Para una guía de replicación paso a paso, por favor consulta el **informe técnico completo** de este proyecto.
