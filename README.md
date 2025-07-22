@@ -1,6 +1,5 @@
 # Estación de Monitoreo Ambiental con ESP32 y Firebase
 [![Estado del Proyecto: Activo](https://img.shields.io/badge/estado-activo-success.svg)](https://github.com/NicolasFluxa/Proyecto-Monitor-Ambiental) 
-[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow.svg)](https://github.com/NicolasFluxa/Proyecto-Monitor-Ambiental/blob/main/LICENSE)
 [![Tecnología: ESP32](https://img.shields.io/badge/plataforma-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
 [![Backend: Firebase](https://img.shields.io/badge/backend-Firebase-orange.svg)](https://firebase.google.com/)
 
@@ -62,5 +61,11 @@ Para replicar este proyecto, se utilizó el siguiente entorno:
 * **Paquete de Placas:** `esp32` by Espressif Systems v2.0.5 o superior.
 * **Backend:** Google Firebase - Realtime Database.
 * **Librerías:** Consulta la sección de librerías en el informe técnico para ver las versiones exactas.
+ 
 
-Para una guía de replicación paso a paso, por favor consulta el **informe técnico completo** de este proyecto.
+---
+## Derechos de Autor y Uso
+© 2025, Nicolás Fluxá Morán. Todos los derechos reservados.
+
+Este proyecto y su código fuente son propiedad intelectual de su autor. Se muestran públicamente con fines de demostración y portafolio. No se concede permiso para su uso, copia, modificación o distribución sin el consentimiento expreso y por escrito del autor.
+
