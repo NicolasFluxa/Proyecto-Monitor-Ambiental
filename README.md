@@ -6,18 +6,10 @@
 
 Una estación IoT de código abierto para monitorear la calidad del aire en tiempo real, diseñada para ser replicable y escalable.
 
-![Foto del Prototipo Terminado](fotos/mi_estacion.jpg)
 
 ---
 ## Motivación
 La calidad del aire que respiramos tiene un impacto directo en nuestra salud y bienestar. Este proyecto nace de la necesidad de crear una herramienta accesible y de bajo costo que permita a cualquier persona medir, entender y tomar conciencia de su entorno, utilizando tecnologías modernas para tomar decisiones informadas.
-
----
-## Demo de Funcionamiento
-A continuación, se muestra el sistema en acción, enviando los datos de los sensores a la base de datos en la nube en tiempo real.
-
-**Nota:** ¡Graba un GIF corto de tu Monitor Serie y la consola de Firebase actualizándose y reemplaza esta imagen!
-![GIF de Demo](fotos/demo_firebase.gif)
 
 ---
 ## Características
