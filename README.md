@@ -6,7 +6,6 @@
 
 Una estación IoT de código abierto para monitorear la calidad del aire en tiempo real, diseñada para ser replicable y escalable.
 
-**Nota:** ¡Asegúrate de reemplazar esta imagen con una foto de tu proyecto terminado!
 ![Foto del Prototipo Terminado](fotos/mi_estacion.jpg)
 
 ---
