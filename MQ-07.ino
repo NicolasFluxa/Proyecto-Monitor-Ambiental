@@ -18,8 +18,7 @@ void loop() {
   // The ESP32's ADC has a 12-bit resolution, so the value will be between 0 and 4095.
   int coValue = analogRead(mq7Pin);
 
-  // I print the raw value. For MQ sensors, the relationship between voltage
-  // and concentration is typically inverse, but for this test, we just want to see a stable value.
+  // I print the raw value.
   Serial.print("CO sensor raw value: ");
   Serial.println(coValue);
 
