@@ -12,10 +12,10 @@
 #include <Wire.h>
 
 // --- CREDENCIALES Y SECRETOS ---
-#define WIFI_SSID "Andres_2.4"
-#define WIFI_PASSWORD "Alicia97"
-#define FIREBASE_HOST "https://estacion-ambiental-mfa-default-rtdb.firebaseio.com/"
-#define FIREBASE_AUTH "ZYem1KGG2YFcqWTle4KoW60ou0hv3y3K7rGK0iP0"
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#define FIREBASE_HOST "https://your-project-id.firebaseio.com" // Replace with your Firebase Host URL
+#define FIREBASE_AUTH "YOUR_FIREBASE_DATABASE_SECRET"       // Replace with your Firebase Secret Key
 
 // --- CONFIGURACIÓN DE TIEMPO (NTP) ---
 const char* ntpServer = "pool.ntp.org";
